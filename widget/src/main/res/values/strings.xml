@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">widget</string>
+    <string name="widget_ptr_will_refresh">下拉可以刷新</string>
+    <string name="widget_ptr_release_refresh">松开立即刷新</string>
+    <string name="widget_ptr_refreshing">正在刷新...</string>
+    <string name="widget_ptr_refresh_complete">刷新成功</string>
+</resources>

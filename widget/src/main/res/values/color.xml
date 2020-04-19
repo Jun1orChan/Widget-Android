@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="widget_progress_default_bg">#cccccc</color>
+    <color name="widget_progress_default_fg">#1D82DE</color>
+    <color name="widget_color_text">#333333</color>
+    <color name="widget_color_white">#FFFFFF</color>
+    <color name="widget_color_warn">#ff4d4d</color>
+    <color name="widget_color_checked">#1D82DE</color>
+</resources>
