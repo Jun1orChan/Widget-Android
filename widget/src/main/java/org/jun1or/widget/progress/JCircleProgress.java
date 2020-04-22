@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 
-import com.istrong.widget.R;
+import org.jun1or.widget.R;
 
 /**
  * 圆形转动环

@@ -12,7 +12,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.istrong.widget.R;
+import org.jun1or.widget.R;
 
 
 public class HorizentalProgressBar extends View {

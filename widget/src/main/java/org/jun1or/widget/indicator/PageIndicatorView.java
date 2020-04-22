@@ -10,7 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.istrong.widget.R;
+import org.jun1or.widget.R;
+
 
 /**
  * 思路：通过ViewPager.addOnPageChangeListener()进行联动

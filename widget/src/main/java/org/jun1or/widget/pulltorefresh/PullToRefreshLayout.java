@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-import com.istrong.widget.R;
+
+import org.jun1or.widget.R;
 
 import java.util.ArrayList;
 import java.util.List;

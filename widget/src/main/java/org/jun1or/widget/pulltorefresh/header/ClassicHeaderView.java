@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.istrong.widget.R;
+import org.jun1or.widget.R;
 import org.jun1or.widget.progress.JCircleProgress;
 import org.jun1or.widget.pulltorefresh.OnRefreshListener;
 

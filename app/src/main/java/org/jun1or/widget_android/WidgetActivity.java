@@ -9,7 +9,6 @@ import android.view.View;
 import org.jun1or.widget_android.divider.DividerActivity;
 import org.jun1or.widget_android.indicator.IndicatorActivity;
 import org.jun1or.widget_android.pulltorefresh.PullToRefreshActivity;
-import org.jun1or.widget_android.slidedrawerlayout.SlideDrawerLayoutActivity;
 
 public class WidgetActivity extends AppCompatActivity {
 
@@ -20,10 +19,6 @@ public class WidgetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_widget);
     }
 
-    public void goSlideDrawerLayoutActivity(View view) {
-        Intent intent = new Intent(this, SlideDrawerLayoutActivity.class);
-        startActivity(intent);
-    }
 
     public void goDividerAcitivty(View view) {
         Intent intent = new Intent(this, DividerActivity.class);
@@ -40,6 +35,5 @@ public class WidgetActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goBannerActivity(View view) {
-    }
+
 }

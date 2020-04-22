@@ -11,7 +11,7 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.istrong.widget.R;
+import org.jun1or.widget.R;
 
 
 public class NumberProgressBar extends View {
