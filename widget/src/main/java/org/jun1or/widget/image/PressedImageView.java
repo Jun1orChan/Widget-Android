@@ -5,7 +5,12 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 
-public class PressedImageView extends android.support.v7.widget.AppCompatImageView {
+import androidx.appcompat.widget.AppCompatImageView;
+
+/**
+ * @author Administrator
+ */
+public class PressedImageView extends AppCompatImageView {
 
     public PressedImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

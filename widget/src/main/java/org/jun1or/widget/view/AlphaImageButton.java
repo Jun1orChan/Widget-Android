@@ -1,9 +1,13 @@
 package org.jun1or.widget.view;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
 
+import androidx.appcompat.widget.AppCompatImageButton;
+
+/**
+ * @author Administrator
+ */
 public class AlphaImageButton extends AppCompatImageButton {
 
     private AlphaViewHelper mAlphaViewHelper;

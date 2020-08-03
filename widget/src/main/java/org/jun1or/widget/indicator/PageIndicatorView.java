@@ -4,27 +4,39 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import org.jun1or.widget.R;
 
 
 /**
  * 思路：通过ViewPager.addOnPageChangeListener()进行联动
+ *
+ * @author Administrator
  */
 
 public class PageIndicatorView extends View {
 
 
-    private int mPageTotolCount;//页面总数
-    private int mInterval;//间隔
+    /**
+     * 页面总数
+     */
+    private int mPageTotolCount;
+    /**
+     * 间隔
+     */
+    private int mInterval;
     private Drawable mSelectedDrawable, mUnSelectedDrawable;
-
-    private int mCurItemIndex;//当前选中项
+    /**
+     * 当前选中项
+     */
+    private int mCurItemIndex;
 
     public PageIndicatorView(Context context) {
         this(context, null);
@@ -44,10 +56,12 @@ public class PageIndicatorView extends View {
         mInterval = (int) ta.getDimension(R.styleable.widget_PageIndicatorView_widget_interval, dp2px(context, 4));
         mSelectedDrawable = ta.getDrawable(R.styleable.widget_PageIndicatorView_widget_selectedDrawable);
         mUnSelectedDrawable = ta.getDrawable(R.styleable.widget_PageIndicatorView_widget_unSelectedDrawable);
-        if (mSelectedDrawable == null)
-            mSelectedDrawable = context.getResources().getDrawable(R.drawable.widget_indicator_selected);
-        if (mUnSelectedDrawable == null)
-            mUnSelectedDrawable = context.getResources().getDrawable(R.drawable.widget_indicator_unselected);
+        if (mSelectedDrawable == null) {
+            mSelectedDrawable = ContextCompat.getDrawable(context, R.drawable.widget_indicator_selected);
+        }
+        if (mUnSelectedDrawable == null) {
+            mUnSelectedDrawable = ContextCompat.getDrawable(context, R.drawable.widget_indicator_unselected);
+        }
         ta.recycle();
     }
 
@@ -86,8 +100,9 @@ public class PageIndicatorView extends View {
     }
 
     public void setSelectedItemIndex(int index) {
-        if (index >= mPageTotolCount)
+        if (index >= mPageTotolCount) {
             index = index % mPageTotolCount;
+        }
         mCurItemIndex = index;
         invalidate();
     }
@@ -105,8 +120,9 @@ public class PageIndicatorView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (mSelectedDrawable == null || mUnSelectedDrawable == null || mPageTotolCount <= 0)
+        if (mSelectedDrawable == null || mUnSelectedDrawable == null || mPageTotolCount <= 0) {
             return;
+        }
         for (int i = 0; i < mPageTotolCount; i++) {
             //绘制所有未选中的indicator
             int left = getPaddingLeft() + i * (mInterval + mUnSelectedDrawable.getIntrinsicWidth());

@@ -7,14 +7,19 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+
 import org.jun1or.widget.R;
 
 
+/**
+ * @author Administrator
+ */
 public class HorizentalProgressBar extends View {
     private int mDefaultWidth = 0;
     private int mDefaultHeight = 0;
@@ -43,12 +48,12 @@ public class HorizentalProgressBar extends View {
         mBgPaint = new Paint();
         mBgPaint.setAntiAlias(true);
         int bgColor = ta.getColor(R.styleable.widget_horizental_progressbar_widget_progress_bg,
-                context.getResources().getColor(R.color.widget_progress_default_bg));
+                ContextCompat.getColor(context, R.color.widget_progress_default_bg));
         mBgPaint.setColor(bgColor);
         mBgPaint.setStyle(Paint.Style.FILL);
         mFgPaint = new Paint(mBgPaint);
         int fgColor = ta.getColor(R.styleable.widget_horizental_progressbar_widget_progress_fg,
-                context.getResources().getColor(R.color.widget_progress_default_fg));
+                ContextCompat.getColor(context, R.color.widget_progress_default_fg));
         mFgPaint.setColor(fgColor);
         mFgPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         mRadius = ta.getDimensionPixelSize(R.styleable.widget_horizental_progressbar_widget_progress_radius, 0);

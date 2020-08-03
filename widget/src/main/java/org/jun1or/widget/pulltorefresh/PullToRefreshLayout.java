@@ -2,13 +2,15 @@ package org.jun1or.widget.pulltorefresh;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
+
+
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.ViewCompat;
 
 
 import org.jun1or.widget.R;
@@ -17,15 +19,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * @author Administrator
+ */
 public class PullToRefreshLayout extends ViewGroup {
 
     private List<OnRefreshListener> mOnRefreshListenerList = new ArrayList<>();
 
     private Scroller mScroller;
 
-    private int mLastY;//手指最后的Y坐标
+    /**
+     * 手指最后的Y坐标
+     */
+    private int mLastY;
     private int mDownY;
-    private int mRefreshHeaderHeight;//到达刷新的阀值
+    /**
+     * 到达刷新的阀值
+     */
+    private int mRefreshHeaderHeight;
 
     private static final int STATUS_IDLE = 0;
     private static final int STATUS_REFRESHING = 1;
@@ -56,8 +67,9 @@ public class PullToRefreshLayout extends ViewGroup {
     }
 
     public void setTopViewOffset(int topViewOffset) {
-        if (topViewOffset < 0)
+        if (topViewOffset < 0) {
             return;
+        }
         mTopViewOffset = topViewOffset;
     }
 
@@ -104,8 +116,9 @@ public class PullToRefreshLayout extends ViewGroup {
                 mDownY = new Integer(mLastY);
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (mStatus == STATUS_REFRESHING || mStatus == STATUS_REFRESH_COMPLETE)
+                if (mStatus == STATUS_REFRESHING || mStatus == STATUS_REFRESH_COMPLETE) {
                     return true;
+                }
                 int yOffset = (int) ev.getY() - mLastY;
                 if (yOffset > 0) {
                     return true;
@@ -215,8 +228,9 @@ public class PullToRefreshLayout extends ViewGroup {
         super.onFinishInflate();
         int count = getChildCount();
         for (int i = 0; i < count; i++) {
-            if (getChildAt(i) instanceof OnRefreshListener)
+            if (getChildAt(i) instanceof OnRefreshListener) {
                 mOnRefreshListenerList.add((OnRefreshListener) getChildAt(i));
+            }
         }
     }
 
@@ -231,8 +245,9 @@ public class PullToRefreshLayout extends ViewGroup {
      * @param onRefreshListener
      */
     public void setOnRefreshListener(OnRefreshListener onRefreshListener) {
-        if (onRefreshListener != null)
+        if (onRefreshListener != null) {
             mOnRefreshListenerList.add(onRefreshListener);
+        }
     }
 
     /**
@@ -289,8 +304,9 @@ public class PullToRefreshLayout extends ViewGroup {
     }
 
     public void setCompleteDelay(int delayMilSec) {
-        if (delayMilSec > 0)
+        if (delayMilSec > 0) {
             this.mCompleteDelay = delayMilSec;
+        }
     }
 
     /**

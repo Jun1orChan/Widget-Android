@@ -1,10 +1,14 @@
 package org.jun1or.widget.view;
 
-import android.support.annotation.NonNull;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * @author Administrator
+ */
 public class AlphaViewHelper {
 
     private WeakReference<View> mTarget;
@@ -22,6 +26,7 @@ public class AlphaViewHelper {
     private float mNormalAlpha = 1f;
     private float mPressedAlpha = .5f;
     private float mDisabledAlpha = .5f;
+
 
     public AlphaViewHelper(@NonNull View target) {
         mTarget = new WeakReference<>(target);

@@ -3,17 +3,22 @@ package org.jun1or.widget.pulltorefresh.header;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import org.jun1or.widget.R;
 import org.jun1or.widget.progress.JCircleProgress;
 import org.jun1or.widget.pulltorefresh.OnRefreshListener;
 
+
+/**
+ * @author Administrator
+ */
 public class ClassicHeaderView extends FrameLayout implements OnRefreshListener {
 
     private ImageView mImgArrow;
@@ -49,14 +54,12 @@ public class ClassicHeaderView extends FrameLayout implements OnRefreshListener 
 
     @Override
     public void onReleaseRefresh() {
-//        Log.e("TAG", "==========onReleaseRefresh");
         mImgArrow.setImageResource(R.mipmap.widget_ptr_up);
         mTvStatus.setText(getContext().getString(R.string.widget_ptr_release_refresh));
     }
 
     @Override
     public void onRefreshing() {
-//        Log.e("TAG", "==========onRefreshing");
         mImgArrow.setVisibility(GONE);
         mJCircleProgress.setVisibility(VISIBLE);
         mTvStatus.setText(getContext().getString(R.string.widget_ptr_refreshing));
@@ -64,7 +67,6 @@ public class ClassicHeaderView extends FrameLayout implements OnRefreshListener 
 
     @Override
     public void onIdle() {
-//        Log.e("TAG", "==========onIdle");
         mImgArrow.setVisibility(VISIBLE);
         mJCircleProgress.setVisibility(GONE);
         mImgArrow.setImageResource(R.mipmap.widget_ptr_down);
@@ -73,7 +75,6 @@ public class ClassicHeaderView extends FrameLayout implements OnRefreshListener 
 
     @Override
     public void onRefreshComplete() {
-//        Log.e("TAG", "==========onRefreshComplete");
         mImgArrow.setVisibility(VISIBLE);
         mJCircleProgress.setVisibility(GONE);
         mImgArrow.setImageResource(R.mipmap.widget_ptr_complete);
@@ -82,19 +83,10 @@ public class ClassicHeaderView extends FrameLayout implements OnRefreshListener 
 
     @Override
     public void onScrollHeight(int height) {
-    /*    int absHeight = Math.abs(height);
-        if (absHeight < 200) {
-            setAlpha(absHeight / 200f);
-        }*/
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-//        Log.e("TAG", "onLayout=========left:" + left + "====top:" + top + "====right:" + right + "====bottom:" + bottom);
-//        ViewGroup.LayoutParams layoutParams = getLayoutParams();
-//        Log.e("TAG", "======" + layoutParams.height);
-//        layoutParams.height = bottom;
-//        setLayoutParams(layoutParams);
     }
 }

@@ -4,12 +4,15 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+/**
+ * @author Administrator
+ */
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
-    //    private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
 
     public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
     public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
@@ -63,10 +66,11 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
             final View child = parent.getChildAt(i);
             int childPosition = parent.getChildAdapterPosition(child);
             // 当前item是否需要divider（通常最后一个不需要）
-            if (!mIsNeedEndLine)
+            if (!mIsNeedEndLine) {
                 if (!hasDivider(state, childPosition)) {
                     continue;
                 }
+            }
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             final int top = child.getBottom() + params.bottomMargin;
             final int bottom = top + mDivider.getIntrinsicHeight();
@@ -85,10 +89,11 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
             final View child = parent.getChildAt(i);
             int childPosition = parent.getChildAdapterPosition(child);
             // 当前item是否需要divider（通常最后一个不需要）
-            if (!mIsNeedEndLine)
+            if (!mIsNeedEndLine) {
                 if (!hasDivider(state, childPosition)) {
                     continue;
                 }
+            }
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             final int left = child.getRight() + params.rightMargin;
             final int right = left + mDivider.getIntrinsicHeight();
@@ -108,13 +113,16 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
         int current = parent.getChildLayoutPosition(view);
-        if (current == -1)//holder出现异常时，可能为-1
+        //holder出现异常时，可能为-1
+        if (current == -1) {
             return;
+        }
         if (mOrientation == VERTICAL_LIST) {
-            if (state.getItemCount() - 1 == current && !mIsNeedEndLine)
+            if (state.getItemCount() - 1 == current && !mIsNeedEndLine) {
                 outRect.set(0, 0, 0, 0);
-            else
+            } else {
                 outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+            }
         } else {
             outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
         }

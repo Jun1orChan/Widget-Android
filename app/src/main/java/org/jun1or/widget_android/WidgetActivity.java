@@ -2,9 +2,10 @@ package org.jun1or.widget_android;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.jun1or.widget_android.divider.DividerActivity;
 import org.jun1or.widget_android.indicator.IndicatorActivity;

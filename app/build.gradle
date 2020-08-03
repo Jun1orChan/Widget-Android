@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
-        applicationId "com.istrong.widget_android"
+        applicationId "org.jun1or.widget_android"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
@@ -19,8 +19,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 //    implementation project(':widget')
-    implementation 'org.jun1or.baselib:widget:1.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'org.jun1or.baselib:widget:1.0.1'
 }

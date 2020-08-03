@@ -3,7 +3,7 @@ package org.jun1or.widget.image;
 import android.view.MotionEvent;
 
 /**
- * Created by q2366 on 2015/10/12.
+ * @author cwj
  */
 public class RotateGestureDetector {
 
@@ -30,7 +30,9 @@ public class RotateGestureDetector {
         switch (Action) {
             case MotionEvent.ACTION_POINTER_DOWN:
             case MotionEvent.ACTION_POINTER_UP:
-                if (event.getPointerCount() == 2) mPrevSlope = caculateSlope(event);
+                if (event.getPointerCount() == 2) {
+                    mPrevSlope = caculateSlope(event);
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (event.getPointerCount() > 1) {
@@ -42,8 +44,9 @@ public class RotateGestureDetector {
                     double deltaSlope = currDegrees - prevDegrees;
 
                     if (Math.abs(deltaSlope) <= MAX_DEGREES_STEP) {
-                        if (mListener != null)
+                        if (mListener != null) {
                             mListener.onRotate((float) deltaSlope, (x2 + x1) / 2, (y2 + y1) / 2);
+                        }
                     }
                     mPrevSlope = mCurrSlope;
                 }
@@ -60,8 +63,16 @@ public class RotateGestureDetector {
         y2 = event.getY(1);
         return (y2 - y1) / (x2 - x1);
     }
+
+    interface OnRotateListener {
+        /**
+         * 旋转回调
+         *
+         * @param degrees
+         * @param focusX
+         * @param focusY
+         */
+        void onRotate(float degrees, float focusX, float focusY);
+    }
 }
 
-interface OnRotateListener {
-    void onRotate(float degrees, float focusX, float focusY);
-}

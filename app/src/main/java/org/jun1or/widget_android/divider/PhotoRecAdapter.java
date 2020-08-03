@@ -1,10 +1,11 @@
 package org.jun1or.widget_android.divider;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.jun1or.widget_android.R;
 

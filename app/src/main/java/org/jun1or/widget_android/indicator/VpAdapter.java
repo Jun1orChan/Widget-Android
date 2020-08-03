@@ -1,9 +1,10 @@
 package org.jun1or.widget_android.indicator;
 
-import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 import org.jun1or.widget_android.R;
 

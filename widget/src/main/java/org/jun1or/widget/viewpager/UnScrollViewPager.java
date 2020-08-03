@@ -1,12 +1,15 @@
 package org.jun1or.widget.viewpager;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+import androidx.viewpager.widget.ViewPager;
+
 /**
  * 控制是否可以左右滑动
+ *
+ * @author Administrator
  */
 
 public class UnScrollViewPager extends ViewPager {
@@ -27,20 +30,16 @@ public class UnScrollViewPager extends ViewPager {
 
     @Override
     public void scrollTo(int x, int y) {
-//        if (isCanScroll) {
         super.scrollTo(x, y);
-//        }
     }
 
     @Override
     public void setCurrentItem(int item) {
-        // TODO Auto-generated method stub
         super.setCurrentItem(item);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent arg0) {
-        // TODO Auto-generated method stub
         if (mIsCanScroll) {
             return super.onTouchEvent(arg0);
         } else {
@@ -50,7 +49,6 @@ public class UnScrollViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent arg0) {
-        // TODO Auto-generated method stub
         if (mIsCanScroll) {
             return super.onInterceptTouchEvent(arg0);
         } else {

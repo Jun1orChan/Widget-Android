@@ -16,9 +16,12 @@ import android.view.animation.LinearInterpolator;
 
 import org.jun1or.widget.R;
 
+
 /**
  * 圆形转动环
  * Created by Android on 2017/8/24.
+ *
+ * @author Administrator
  */
 
 public class JCircleProgress extends View {
@@ -48,8 +51,9 @@ public class JCircleProgress extends View {
     }
 
     public void cancelAnimation() {
-        if (mValueAnimator != null)
+        if (mValueAnimator != null) {
             mValueAnimator.cancel();
+        }
         mValueAnimator = null;
     }
 
@@ -79,7 +83,8 @@ public class JCircleProgress extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        int center = getWidth() / 2; // 获取圆心的x坐标
+        // 获取圆心的x坐标
+        int center = getWidth() / 2;
         canvas.translate(center, center);
         canvas.rotate(mDegree);
         canvas.drawCircle(0, 0, center - mPaint.getStrokeWidth(), mPaint);

@@ -8,6 +8,8 @@ import android.widget.FrameLayout;
 
 /**
  * 例如：高德地图，一些情况下不方便对其触摸事件进行拦截。所以采用外层包裹一层的方式，进行事件拦截，解决手势冲突问题
+ *
+ * @author Administrator
  */
 
 public class TouchEventContainerLayout extends FrameLayout {
@@ -27,10 +29,12 @@ public class TouchEventContainerLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_UP) {
-            mViewGroup.requestDisallowInterceptTouchEvent(false);
-        } else {
-            mViewGroup.requestDisallowInterceptTouchEvent(true);
+        if (mViewGroup != null) {
+            if (ev.getAction() == MotionEvent.ACTION_UP) {
+                mViewGroup.requestDisallowInterceptTouchEvent(false);
+            } else {
+                mViewGroup.requestDisallowInterceptTouchEvent(true);
+            }
         }
         return false;
     }

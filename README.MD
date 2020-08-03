@@ -2,16 +2,11 @@
 
 ## 引用
 
-1.在根目录build.gradle文件中添加
 
 ```gradle
-
+implementation 'org.jun1or.baselib:widget:1.0.1'
  ```
 
-2.项目build.gradle文件中添加
-
-```gradle
- ```
 
 ## 使用
 
@@ -19,6 +14,10 @@
 
 
 ## 版本记录
+
+### 1.0.1
+
+- 升级至AndroidX
 
 ### 1.0.0
 

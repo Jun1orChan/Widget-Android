@@ -4,9 +4,14 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.widget.ImageView;
 
+/**
+ * @author Administrator
+ */
 public class Info {
 
-    // 内部图片在整个手机界面的位置
+    /**
+     * 内部图片在整个手机界面的位置
+     */
     RectF mRect = new RectF();
 
     // 控件在窗口的位置
