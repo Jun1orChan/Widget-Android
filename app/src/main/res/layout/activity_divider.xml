@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nd.widget.progress.HorizentalProgressBar
+        android:id="@+id/pb"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:widget_progress_bg="#000000"
+        app:widget_progress_fg="#ffffff"
+        app:widget_progress_radius="5dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
